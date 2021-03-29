@@ -12,6 +12,7 @@
 */
 //Route: :get('user', 'ManagementUserController@index');
 Route::resource('user', 'ManagementUserController');
-Route::get('/home', function () {
-    return view('home');
-});
+Route::resource('home', 'ManagementUserController');
+// Route::get('/home', function () {
+//     return view('home');
+// });
