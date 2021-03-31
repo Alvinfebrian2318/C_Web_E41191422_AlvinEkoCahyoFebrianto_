@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Suooirt\Facades\Route;
+use App\Http\Controllers\Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +14,16 @@
 |
 */
 //Route: :get('user', 'ManagementUserController@index');
-Route::resource('user', 'ManagementUserController');
-Route::resource('home', 'ManagementUserController');
+//Route::resource('user', 'ManagementUserController');
+//Route::resource('home', 'ManagementUserController');
 // Route::get('/home', function () {
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::group(['namespace' => 'frontend'], function () {
+    Route::resource('home', 'HomeController');
+});
 //     return view('home');
 // });
