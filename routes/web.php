@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Suooirt\Facades\Route;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +13,15 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route: :get('user', 'ManagementUserController@index');
-//Route::resource('user', 'ManagementUserController');
-//Route::resource('home', 'ManagementUserController');
-// Route::get('/home', function () {
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'frontend'], function () {
-    Route::resource('home', 'HomeController');
+Route::get('home', function () {
+    return view('home');
 });
-//     return view('home');
-// });
+
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
